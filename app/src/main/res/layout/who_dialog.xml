@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/back"
+    android:paddingTop="25dp"
+    android:paddingBottom="25dp"
+    android:paddingEnd="75dp"
+    android:paddingStart="25dp">
+
+
+            <TextView
+                android:id="@+id/who_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="who_head"
+                android:fontFamily="@font/product_sans_bold"
+                android:textAppearance="@style/productsans"
+                android:textSize="30sp" />
+
+            <RadioGroup
+                android:layout_below="@+id/who_head"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:textAppearance="@style/productsans"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:textSize="18sp"
+                    android:id="@+id/Everyone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/everyone"/>
+
+                <RadioButton
+                    android:textAppearance="@style/productsans"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:textSize="18sp"
+                    android:id="@+id/mycontacts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mycontacts"/>
+
+                <RadioButton
+                    android:textAppearance="@style/productsans"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:textSize="18sp"
+                    android:id="@+id/customlist"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/customlist"/>
+
+                <RadioButton
+                    android:textAppearance="@style/productsans"
+                    android:fontFamily="@font/product_sans_regular"
+                    android:textSize="18sp"
+                    android:id="@+id/noone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/noone"/>
+
+            </RadioGroup>
+
+</RelativeLayout>

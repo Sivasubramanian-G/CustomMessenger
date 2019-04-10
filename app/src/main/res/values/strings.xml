@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Custom Messenger</string>
+    <string name="emph">Email or Phone Number</string>
+    <string name="next">Next</string>
+    <string name="createacc">Create a new Account.</string>
+    <string name="forgotpass">Forgot Password?</string>
+    <string name="moto">Customization is better than replacement.</string>
+    <string name="pass">Password</string>
+    <string name="haveacc">Already have an account? Login</string>
+    <string name="appname">Custom Messenger</string>
+    <string name="editpho">Edit Profile Pic</string>
+    <string name="name">Name</string>
+    <string name="user_name">User Name</string>
+    <string name="email">Email</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="everyone">Everyone</string>
+    <string name="mycontacts">My Contacts</string>
+    <string name="noone">No One</string>
+    <string name="customlist">Customized List</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/settings_parent"
+    android:paddingStart="15dp"
+    android:paddingEnd="15dp"
+    android:paddingTop="15dp">
+
+    <View
+        android:id="@+id/set_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C0C0C0"
+        android:layout_marginEnd="75dp"
+        android:layout_marginStart="75dp"
+        android:layout_below="@+id/set_sub_item"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_topic"
+        android:textAppearance="@style/productsans"
+        android:fontFamily="@font/product_sans_bold"
+        android:textSize="16sp"
+        android:text="set_topic"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_sub_item"
+        android:fontFamily="@font/product_sans_regular"
+        android:textSize="14sp"
+        android:text="set_sub_item"
+        android:layout_below="@+id/set_topic"
+        android:textColor="#3F3F3F"/>
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/set_check_box"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"/>
+
+</RelativeLayout>

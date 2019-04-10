@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:textViewStyle">@style/productsans</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:autofilledHighlight" tools:targetApi="o">@drawable/autofillhighlight</item>
+    </style>
+
+    <style name="productsans" parent="android:Widget.TextView">
+        <item name="android:font" tools:targetApi="o">@font/product_sans_regular</item>
+    </style>
+
+</resources>

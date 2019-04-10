@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background"
+    android:paddingRight="25dp"
+    android:paddingLeft="25dp"
+    tools:context=".Signup">
+
+    <RelativeLayout
+        android:id="@+id/sr3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/sr2"
+        android:elevation="10dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/back"
+        android:padding="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/stxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/product_sans_bold"
+            android:text="@string/appname"
+            android:textAppearance="@style/productsans"
+            android:textSize="25sp" />
+
+        <ScrollView
+            android:layout_marginTop="25dp"
+            android:id="@+id/sscr1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/stxt">
+
+
+            <RelativeLayout
+                android:id="@+id/sr1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:paddingBottom="5dp">
+
+                <TextView
+                    android:id="@+id/semailtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/product_sans"
+
+                    android:text="@string/emph"
+                    android:textAppearance="@style/productsans"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/semailtxt"
+                    android:id="@+id/semaileidt"
+                    android:background="@drawable/exittext"
+                    android:layout_marginTop="20dp"
+                    android:padding="20dp"
+                    android:elevation="5dp"/>
+
+                <TextView
+                    android:id="@+id/spasstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/semaileidt"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/product_sans"
+                    android:text="@string/pass"
+                    android:textAppearance="@style/productsans"
+                    android:textSize="18sp" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spasstxt"
+                    android:id="@+id/spasseidt"
+                    android:background="@drawable/exittext"
+                    android:layout_marginTop="20dp"
+                    android:padding="20dp"
+                    android:elevation="5dp"/>
+
+                <TextView
+                    android:id="@+id/shaveacc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spasseidt"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/snext"
+                    android:fontFamily="@font/product_sans"
+                    android:text="@string/haveacc"
+                    android:textAppearance="@style/productsans"
+                    android:textColor="@color/minimalRed0"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/snext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/spasseidt"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/button"
+                    android:fontFamily="@font/product_sans"
+                    android:text="NEXT"
+                    android:textAppearance="@style/productsans"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/sr2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/back"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp"
+        android:paddingTop="25dp"
+        android:paddingBottom="25dp">
+
+        <RelativeLayout
+            android:id="@+id/sgoogle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/redcir"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/sfacebook"
+            android:layout_marginEnd="30dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/google1"
+                android:layout_centerInParent="true"
+                android:elevation="8dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sfacebook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dbluecir"
+            android:layout_centerInParent="true">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/facebook"
+                android:layout_centerInParent="true"
+                android:elevation="8dp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/stwitter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/lbluecir"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/sfacebook"
+            android:layout_marginStart="30dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@drawable/twitter"
+                android:layout_centerInParent="true"
+                android:elevation="8dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
