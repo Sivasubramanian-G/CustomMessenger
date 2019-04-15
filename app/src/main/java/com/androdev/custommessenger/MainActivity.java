@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         /*Intent intent =  new Intent(MainActivity.this,ProfileView.class);
         startActivity(intent);*/
 
-        Intent intent = new Intent(MainActivity.this, PrivacySecuritySettings.class);
+        Intent intent = new Intent(MainActivity.this, SettingsPager.class);
         startActivity(intent);
 
     }

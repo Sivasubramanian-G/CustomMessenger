@@ -1,9 +1,8 @@
 package com.androdev.custommessenger;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,12 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
-public class PSSetRecyclerAdapter extends RecyclerView.Adapter<PSSetRecyclerAdapter.ViewHolder> {
+public class SetRecyclerAdapter extends RecyclerView.Adapter<SetRecyclerAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
 
@@ -30,7 +27,7 @@ public class PSSetRecyclerAdapter extends RecyclerView.Adapter<PSSetRecyclerAdap
     private Dialog dialog;
     private TextView who_head;
 
-    public PSSetRecyclerAdapter(Context context, ArrayList<String> set_topics, ArrayList<String> set_sub_items, ArrayList<String> set_check_boxes, ArrayList<String> set_popups, ArrayList<String> set_heads) {
+    public SetRecyclerAdapter(Context context, ArrayList<String> set_topics, ArrayList<String> set_sub_items, ArrayList<String> set_check_boxes, ArrayList<String> set_popups, ArrayList<String> set_heads) {
         this.set_topics = set_topics;
         this.set_sub_items = set_sub_items;
         this.set_check_boxes = set_check_boxes;
@@ -47,15 +44,14 @@ public class PSSetRecyclerAdapter extends RecyclerView.Adapter<PSSetRecyclerAdap
         return  holder;
     }
 
-
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
 
         if(!set_topics.get(position).equals("")){
             holder.set_topic.setText(set_topics.get(position));
             if(set_heads.get(position).equals("yes")){
                 Log.d(TAG,"head: yes");
-                holder.set_topic.setTextSize(30);
+                holder.set_topic.setTextSize(25);
                 holder.set_line.setVisibility(View.INVISIBLE);
             }else{
                 holder.set_topic.setTextSize(18);
@@ -76,7 +72,7 @@ public class PSSetRecyclerAdapter extends RecyclerView.Adapter<PSSetRecyclerAdap
             holder.set_check_box.setVisibility(View.GONE);
         }
 
-       holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+       /*holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                if(!set_heads.get(position).equals("yes") && set_heads.get(position).equals("")){
@@ -91,12 +87,12 @@ public class PSSetRecyclerAdapter extends RecyclerView.Adapter<PSSetRecyclerAdap
                    }
                }
             }
-        });
+        });*/
     }
 
     @Override
     public int getItemCount() {
-        return set_topics.size();
+        return this.set_topics.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

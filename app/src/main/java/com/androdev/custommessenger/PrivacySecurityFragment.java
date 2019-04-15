@@ -1,30 +1,48 @@
 package com.androdev.custommessenger;
 
+
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import java.util.ArrayList;
 
-public class PrivacySecuritySettings extends AppCompatActivity {
 
-    private static final String TAG = "PrivacySecuritySettings";
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class PrivacySecurityFragment extends Fragment {
 
+    private static final String TAG = "PrivacySecurityFragment";
     private ArrayList<String> set_topics = new ArrayList<>();
     private ArrayList<String> set_sub_items = new ArrayList<>();
     private ArrayList<String> set_check_boxes = new ArrayList<>();
     private ArrayList<String> set_popups = new ArrayList<>();
     private ArrayList<String> set_head = new ArrayList<>();
 
+    public PrivacySecurityFragment() {
+        // Required empty public constructor
+    }
+
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_privacy_security_settings);
-
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_privacy_security, container, false);
         initArrayLists();
-
+        Log.d(TAG, "initRecyclerView: initiated");
+        RecyclerView recyclerView = v.findViewById(R.id.ps_set_recycler_view);
+        SetRecyclerAdapter adapter = new SetRecyclerAdapter(getContext(),set_topics,set_sub_items,set_check_boxes, set_popups, set_head);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        return v;
     }
 
     private void initArrayLists() {
@@ -163,15 +181,6 @@ public class PrivacySecuritySettings extends AppCompatActivity {
         set_popups.add("request");
         set_head.add("");
 
-        initRecyclerView();
-
     }
 
-    private void initRecyclerView() {
-        Log.d(TAG, "initRecyclerView: initiated");
-        RecyclerView recyclerView = findViewById(R.id.ps_set_recycler_view);
-        PSSetRecyclerAdapter adapter = new PSSetRecyclerAdapter(this,set_topics,set_sub_items,set_check_boxes, set_popups, set_head);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 }

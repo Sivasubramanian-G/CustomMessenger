@@ -6,8 +6,8 @@
     android:background="@drawable/back"
     android:paddingTop="25dp"
     android:paddingBottom="25dp"
-    android:paddingEnd="75dp"
-    android:paddingStart="25dp">
+    android:paddingStart="25dp"
+    android:paddingEnd="25dp">
 
 
             <TextView
@@ -20,10 +20,13 @@
                 android:textSize="30sp" />
 
             <RadioGroup
+                android:id="@+id/who_rg"
                 android:layout_below="@+id/who_head"
                 android:layout_marginTop="15dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingEnd="75dp"
+                android:paddingStart="10dp">
 
                 <RadioButton
                     android:textAppearance="@style/productsans"
@@ -32,7 +35,8 @@
                     android:id="@+id/Everyone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/everyone"/>
+                    android:text="@string/everyone"
+                    android:layout_marginTop="2dp"/>
 
                 <RadioButton
                     android:textAppearance="@style/productsans"
@@ -41,7 +45,8 @@
                     android:id="@+id/mycontacts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/mycontacts"/>
+                    android:text="@string/mycontacts"
+                    android:layout_marginTop="2dp"/>
 
                 <RadioButton
                     android:textAppearance="@style/productsans"
@@ -50,7 +55,8 @@
                     android:id="@+id/customlist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/customlist"/>
+                    android:text="@string/customlist"
+                    android:layout_marginTop="2dp"/>
 
                 <RadioButton
                     android:textAppearance="@style/productsans"
@@ -59,8 +65,30 @@
                     android:id="@+id/noone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/noone"/>
+                    android:text="@string/noone"
+                    android:layout_marginTop="2dp"/>
 
             </RadioGroup>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/who_rg"
+        android:id="@+id/who_pos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        android:background="#00000000"
+        android:layout_toStartOf="@+id/who_neg"
+        android:layout_marginEnd="2dp"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/who_rg"
+        android:id="@+id/who_neg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="cancel"
+        android:background="#00000000"
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
