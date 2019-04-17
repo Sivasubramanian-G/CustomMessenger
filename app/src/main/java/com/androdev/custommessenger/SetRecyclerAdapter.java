@@ -1,6 +1,5 @@
 package com.androdev.custommessenger;
 
-import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ public class SetRecyclerAdapter extends RecyclerView.Adapter<SetRecyclerAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") final int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
 
         if(!set_topics.get(position).equals("")){
             holder.set_topic.setText(set_topics.get(position));
@@ -72,10 +72,11 @@ public class SetRecyclerAdapter extends RecyclerView.Adapter<SetRecyclerAdapter.
             holder.set_check_box.setVisibility(View.GONE);
         }
 
-       /*holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+       holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               if(!set_heads.get(position).equals("yes") && set_heads.get(position).equals("")){
+                Toast.makeText(context, set_topics.get(position), Toast.LENGTH_SHORT).show();
+               /*if(!set_heads.get(position).equals("yes") && set_heads.get(position).equals("")){
                    Toast.makeText(context, set_popups.get(position), Toast.LENGTH_SHORT).show();
                    if(set_popups.get(position).equals("who")){
                       dialog = new Dialog(context);
@@ -85,14 +86,15 @@ public class SetRecyclerAdapter extends RecyclerView.Adapter<SetRecyclerAdapter.
                       Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
                       dialog.show();
                    }
-               }
+               }*/
             }
-        });*/
+        });
+
     }
 
     @Override
     public int getItemCount() {
-        return this.set_topics.size();
+        return set_topics.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

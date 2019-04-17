@@ -3,6 +3,7 @@ package com.androdev.custommessenger;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,21 +26,24 @@ public class PrivacySecurityFragment extends Fragment {
     private ArrayList<String> set_check_boxes = new ArrayList<>();
     private ArrayList<String> set_popups = new ArrayList<>();
     private ArrayList<String> set_head = new ArrayList<>();
+    private SetRecyclerAdapter adapter;
 
     public PrivacySecurityFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initArrayLists();
+        adapter = new SetRecyclerAdapter(getContext(), set_topics, set_sub_items, set_check_boxes, set_popups, set_head);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_privacy_security, container, false);
-        initArrayLists();
-        Log.d(TAG, "initRecyclerView: initiated");
         RecyclerView recyclerView = v.findViewById(R.id.ps_set_recycler_view);
-        SetRecyclerAdapter adapter = new SetRecyclerAdapter(getContext(),set_topics,set_sub_items,set_check_boxes, set_popups, set_head);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return v;

@@ -1,6 +1,5 @@
 package com.androdev.custommessenger;
 
-import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +9,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.PagerTitleStrip;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.widget.TextView;
 
@@ -26,6 +24,14 @@ public class SettingsPager extends AppCompatActivity {
         PagerTitleStrip setPagerTitleStrip = (PagerTitleStrip) findViewById(R.id.set_pager_title_strip);
         setPagerTitleStrip.setTextSize(TypedValue.COMPLEX_UNIT_SP,30);
         setPagerTitleStrip.setNonPrimaryAlpha((float) 0.3);
+        Typeface font = Typeface.createFromAsset(getAssets(), "product_sans_bold.ttf");
+
+        for (int counter = 0 ; counter<setPagerTitleStrip.getChildCount(); counter++) {
+
+            if (setPagerTitleStrip.getChildAt(counter) instanceof TextView) {
+                ((TextView)setPagerTitleStrip.getChildAt(counter)).setTypeface(font);
+            }
+        }
     }
 
     private class SettingsPagerAdapter extends FragmentPagerAdapter{
@@ -67,26 +73,6 @@ public class SettingsPager extends AppCompatActivity {
 
         }
 
-    }
-
-    public class CustomFontPagerTitleStrip extends PagerTitleStrip {
-
-        Typeface tf = Typeface.createFromAsset(getContext().getAssets(), "product_sans_bold.ttf");
-
-        public CustomFontPagerTitleStrip(Context context) {
-            super(context);
-        }
-        public CustomFontPagerTitleStrip(Context context, AttributeSet attrs) {
-            super(context, attrs);
-        }
-        protected void onLayout(boolean changed, int l, int t, int r, int b) {
-            super.onLayout(changed, l, t, r, b);
-            for (int i=0; i<this.getChildCount(); i++) {
-                if (this.getChildAt(i) instanceof TextView) {
-                    ((TextView)this.getChildAt(i)).setTypeface(tf);
-                }
-            }
-        }
     }
 
 }

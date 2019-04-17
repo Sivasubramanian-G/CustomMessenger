@@ -3,6 +3,7 @@ package com.androdev.custommessenger;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,26 +20,30 @@ import java.util.ArrayList;
  */
 public class NotificationSoundsFragment extends Fragment {
 
-    private static final String TAG = "DataStorageFragment";
+    private static final String TAG = "NotificationSoundsFragm";
     private ArrayList<String> set_topics = new ArrayList<>();
     private ArrayList<String> set_sub_items = new ArrayList<>();
     private ArrayList<String> set_check_boxes = new ArrayList<>();
     private ArrayList<String> set_popups = new ArrayList<>();
     private ArrayList<String> set_head = new ArrayList<>();
+    private SetRecyclerAdapter adapter;
 
     public NotificationSoundsFragment() {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initArrayLists();
+        adapter = new SetRecyclerAdapter(getContext(), set_topics, set_sub_items, set_check_boxes, set_popups, set_head);
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v =inflater.inflate(R.layout.fragment_notification_sounds, container, false);
-        initArrayLists();
         RecyclerView recyclerView = v.findViewById(R.id.ns_set_recycler_view);
-        SetRecyclerAdapter adapter = new SetRecyclerAdapter(getContext(),set_topics,set_sub_items,set_check_boxes, set_popups, set_head);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return v;
